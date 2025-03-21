@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyến xe thanh xuân của chúng ta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap">
+    <style>
+        /* Nền vũ trụ neon */
+        body {
+            background: radial-gradient(circle, #0a0a1a, #000000);
+            color: white;
+            font-family: 'Indie Flower', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hiệu ứng sao rơi */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            animation: twinkle 3s infinite ease-in-out alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: translateY(0px); }
+            100% { opacity: 1; transform: translateY(-10px); }
+        }
+
+        /* Tiêu đề phát sáng */
+        h1 {
+            font-size: 2.5rem;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 30px #ff0;
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { text-shadow: 0 0 10px #0ff, 0 0 20px #00f; }
+            100% { text-shadow: 0 0 15px #ff0, 0 0 25px #f0f; }
+        }
+
+        /* Bố cục chính */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 20px;
+        }
+
+        /* Hộp nội dung hình đám mây */
+        .cloud-box {
+            background: rgba(173, 216, 230, 0.9);
+            color: black;
+            padding: 15px;
+            border-radius: 40px;
+            max-width: 400px;
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.8);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+            position: relative;
+            animation: float 3s infinite ease-in-out alternate;
+        }
+
+        /* Hiệu ứng xuất hiện */
+        .cloud-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hiệu ứng trôi của đám mây */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(8px); }
+        }
+
+        /* Tạo hình dạng đám mây */
+        .cloud-box::before, .cloud-box::after {
+            content: "";
+            position: absolute;
+            background: rgba(173, 216, 230, 0.9);
+            border-radius: 50%;
+        }
+
+        .cloud-box::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 25px;
+        }
+
+        .cloud-box::after {
+            width: 70px;
+            height: 70px;
+            top: -35px;
+            right: 30px;
+        }
+
+        /* Hiệu ứng rung khi hover */
+        .cloud-box:hover {
+            animation: shake 0.3s ease-in-out infinite alternate;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(-1px); }
+            100% { transform: translateX(1px); }
+        }
+
+        /* Nút neon */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background: linear-gradient(45deg, #0ff, #00f, #f0f);
+            border-radius: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            background: linear-gradient(45deg, #ff0, #f0f, #00f);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+
+    <header>
+        <h1>Chuyến xe thanh xuân</h1>
+    </header>
+
+    <main>
+        <div class="cloud-box hidden">
+            <h2>🌍 Trang Chủ</h2>
+            <p>Chào mừng đến với kỷ yếu lớp 12D1!</p>
+            <a href="index.html" class="button">Khám phá</a>
+        </div>
+
+        <div class="cloud-box hidden">
+            <h2>👨‍👩‍👧‍👦 Thành Viên</h2>
+            <p>Khám phá danh sách các thành viên trong lớp.</p>
+            <a href="thanhvien.html" class="button">Xem thành viên</a>
+        </div>
+
+        <div class="cloud-box hidden">
+            <h2>🚀 Hoạt động</h2>
+            <p>Cùng nhìn lại hành trình của chúng ta.</p>
+            <a href="hoatdong.html" class="button">Xem hoạt động</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Chuyến xe thanh xuân đã cập bến....</p>
+    </footer>
+
+    <script>
+        const boxes = document.querySelectorAll(".cloud-box");
+        const starContainer = document.querySelector(".stars");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.3 });
+
+        boxes.forEach(box => observer.observe(box));
+
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement("div");
+            star.classList.add("star");
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            starContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>

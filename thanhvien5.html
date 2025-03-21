@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu Bản thân</title>
+    <style>
+        /* Đặt một background động với gradient màu sắc */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #6a5acd, #ff6347, #3cb371);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .container h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .container p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #fff;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            color: #fff;
+            background-color: #ff6347;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #6a5acd;
+            transform: scale(1.1);
+        }
+
+        .intro-text {
+            animation: fadeInText 2s ease-out;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Định dạng đường link */
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #3cb371;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #ff6347;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Ảnh đại diện -->
+        <img src= https://i.imgur.com/0BMDpke.jpeg alt="Avatar" class="avatar">
+
+        <!-- Tiêu đề và mô tả -->
+        <h1 class="intro-text">Xin Chào, tôi là Lê Thị Chung</h1>
+
+        <p class="intro-text"><strong>Sở thích:</strong> Tôi yêu thích xem phim  .</p>
+        
+        <p class="intro-text"><strong>Ngày sinh:</strong> Tôi sinh vào ngày 11/07/2007.</p>
+    <!-- Đường link quay lại trang thanhvien.html -->
+        <a href="thanhvien.html" class="back-link">Quay lại trang thành viên</a>
+    </div>
+
+</body>
+</html>

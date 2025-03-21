@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Hình Ảnh Ấn Tượng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            max-width: 1200px;
+        }
+
+        .image-card {
+            position: relative;
+            width: 600px;  /* Điều chỉnh chiều rộng ảnh lớn hơn */
+            height: 400px; /* Giữ chiều cao cố định */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: scale(1.05);
+        }
+
+        .info {
+            position: absolute;
+            bottom: 0;  /* Căn chữ vào chân ảnh */
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6); /* Lớp nền mờ để dễ đọc chữ */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .image-card:hover .info {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .info h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .info a {
+            color: #ff6347;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .info a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <!-- Image 1 -->
+        <div class="image-card">
+            <img src="https://via.placeholder.com/600x400?text=Image+1" alt="Image 1">
+            <div class="info">
+                <h3>Hoạt Động 1</h3>
+                <p>Đây là mô tả ngắn về hoạt động 1.</p>
+                <a href="#">Xem thêm</a>
+            </div>
+        </div>
+        <!-- Image 2 -->
+        <div class="image-card">
+            <img src="https://via.placeholder.com/600x400?text=Image+2" alt="Image 2">
+            <div class="info">
+                <h3>Hoạt Động 2</h3>
+                <p>Đây là mô tả ngắn về hoạt động 2.</p>
+                <a href="#">Xem thêm</a>
+            </div>
+        </div>
+        <!-- Image 3 -->
+        <div class="image-card">
+            <img src="https://via.placeholder.com/600x400?text=Image+3" alt="Image 3">
+            <div class="info">
+                <h3>Hoạt Động 3</h3>
+                <p>Đây là mô tả ngắn về hoạt động 3.</p>
+                <a href="#">Xem thêm</a>
+            </div>
+        </div>
+        <!-- Image 4 -->
+        <div class="image-card">
+            <img src="https://via.placeholder.com/600x400?text=Image+4" alt="Image 4">
+            <div class="info">
+                <h3>Hoạt Động 4</h3>
+                <p>Đây là mô tả ngắn về hoạt động 4.</p>
+                <a href="#">Xem thêm</a>
+            </div>
+        </div>
+        <!-- Image 5 -->
+        <div class="image-card">
+            <img src="https://via.placeholder.com/600x400?text=Image+5" alt="Image 5">
+            <div class="info">
+                <h3>Hoạt Động 5</h3>
+                <p>Đây là mô tả ngắn về hoạt động 5.</p>
+                <a href="#">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
